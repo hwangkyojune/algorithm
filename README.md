@@ -1,2 +1,2 @@
 # algorithm
-alogrithm study
+alogrithm study!
