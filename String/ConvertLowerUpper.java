@@ -7,7 +7,7 @@ import java.security.spec.ECField;
 public class ConvertLowerUpper {
     public void Solution(String string){
         StringBuffer result = new StringBuffer();
-        char mid;
+        char mid = 0;
         for(int i=0;i < string.length();i++){
             if((mid = string.charAt(i))<=90){
                 result.append((char)(mid+32));
@@ -15,6 +15,7 @@ public class ConvertLowerUpper {
                 result.append((char)(mid-32));
             }
         }
+        Character.isLowerCase(mid);
         System.out.println(result);
 
     }
