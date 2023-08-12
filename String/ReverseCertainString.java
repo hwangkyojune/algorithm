@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 //입력받은 문자열 중에서 알파벳만 뒤집는 알고리즘
-public class ReverseCertainString {
+public class
+ReverseCertainString {
     public boolean isAlphabet(char c){
         if((65<=c)&&(c<=122)){
             if((90<c)&&(c<97)){

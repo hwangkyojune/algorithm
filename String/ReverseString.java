@@ -12,8 +12,6 @@ public class ReverseString {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List<String> strings = new ArrayList<>();
-
-
         try{
             int num = sc.nextInt();
             System.out.println(num);
