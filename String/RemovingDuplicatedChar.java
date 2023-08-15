@@ -9,20 +9,19 @@ public class RemovingDuplicatedChar {
         sc.close();
 
         char[] chars = string.toCharArray();
+        List<Character> chList = new ArrayList<>();
 
-//        List<Character> cs = Arrays.asList(chars);
-        List<Character> cs = Arrays.asList(new Character[]{'c','d'});
+        for(int i=0;i<chars.length;i++){
+            chList.add(new Character(chars[i]));
+        }
 
+        Set<Character> set = new LinkedHashSet<>(chList);
 
+        Iterator<Character> iter = set.iterator();
 
-        List<char[]> ct = Arrays.asList(chars);
-
-
-
-        List<char> hs = new ArrayList<Character>(Arrays.asList(chars));
-
-        System.out.println(hs.toArray());
-
+        while(iter.hasNext()){
+            System.out.print(iter.next());
+        }
 
     }
 }
