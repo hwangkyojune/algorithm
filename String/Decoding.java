@@ -6,8 +6,8 @@ public class Decoding {
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
-        Integer requestNum  = Integer.parseInt(s.nextLine());
-        String requestString  = s.nextLine();
+        Integer requestNum  = s.nextInt();
+        String requestString  = s.next();
 
 
         Decoding cd = new Decoding();
