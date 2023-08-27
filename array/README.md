@@ -1,2 +1,2 @@
-# array  
-practicing array
+# Array  
+Practicing Array

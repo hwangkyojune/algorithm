@@ -1,4 +1,4 @@
-package array;
+package array.prime_number;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
 //입력받은 양수 중 가장 큰 숫자보다 작거나 같은 소수들을 구한다. 소수들을 리스트에 저장
 //소수들이 들어있는 리스트에 요소들이 속하는지 검사
 
-public class FindReveredPrimeNumber_v2 {
+public class FindReveredPrimeNumbers_v2 implements FindPrimeNumbers {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int length = Integer.parseInt(s.next());
@@ -23,18 +23,17 @@ public class FindReveredPrimeNumber_v2 {
 //            System.out.println(reversedNum);
             reversedNums.add(reversedNum);
         }
-        FindReveredPrimeNumber_v2 frd = new FindReveredPrimeNumber_v2();
+        FindReveredPrimeNumbers_v2 frd = new FindReveredPrimeNumbers_v2();
         long beforeTime = System.currentTimeMillis();
-        frd.solution(reversedNums);
+        frd.findPrimeNumbers(reversedNums);
         long afterTime = System.currentTimeMillis();
         long secDiffTime = (afterTime - beforeTime); //두 시간에 차 계산
         System.out.println("시간차이(m) : "+secDiffTime);
     }
 
-    public void solution(List<Integer> reversedNums){
+    public void findPrimeNumbers(List<Integer> reversedNums) {
 
         int max = Collections.max(reversedNums);
-
         int[] numbers = new int[max+1];
         List<Integer> primeNumbers = new ArrayList<>();
 
@@ -47,15 +46,13 @@ public class FindReveredPrimeNumber_v2 {
                 }
             }
         }
-
-
         for(int num:reversedNums){
             if(isDecimal(num,primeNumbers)) System.out.print(num+" ");
             System.out.println("");
         }
     }
 
-    public boolean isDecimal(int num,List<Integer> primeNumbers){
+    private boolean isDecimal(int num,List<Integer> primeNumbers){
         if(Collections.binarySearch(primeNumbers,num)>=0) {
             return true;
         }else{
