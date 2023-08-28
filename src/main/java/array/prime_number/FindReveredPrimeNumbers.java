@@ -23,17 +23,18 @@ public class FindReveredPrimeNumbers implements FindPrimeNumbers{
         }
         FindReveredPrimeNumbers frd = new FindReveredPrimeNumbers();
         long beforeTime = System.currentTimeMillis();
-        frd.findPrimeNumbers(reversedNums);
+        frd.getPrimeNumbers(reversedNums);
         long afterTime = System.currentTimeMillis();
         long secDiffTime = (afterTime - beforeTime); //두 시간에 차 계산
         System.out.println("시간차이(m) : "+secDiffTime);
     }
 
-    public void findPrimeNumbers(List<Integer> reversedNums){
+    public List<Integer> getPrimeNumbers(List<Integer> reversedNums){
+        List<Integer> primeNums = new ArrayList<>();
         for(int num:reversedNums){
-            if(isDecimal(num)) System.out.print(num+" ");
-            System.out.println("");
+            if(isDecimal(num)) primeNums.add(num);
         }
+        return primeNums;
     }
 
     public boolean isDecimal(int num){
