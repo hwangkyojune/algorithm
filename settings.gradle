@@ -1,2 +1,4 @@
 rootProject.name = 'test_for-gradle'
+include 'src:main:homework'
+findProject(':src:main:homework')?.name = 'homework'
 

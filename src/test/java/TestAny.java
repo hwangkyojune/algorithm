@@ -1,15 +1,43 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class TestAny {
     @Test
     public void testArrayList(){
-        int nums =10;
-        List<Integer> ranks = new ArrayList<>(Arrays.asList(new Integer[nums]));
 
-        System.out.println(ranks.get(2));
+        Runnable r = ()->{
+            System.out.println("hi");
+        };
+        Runnable r1 = new Runnable(){
+            @Override
+            public void run() {
+                System.out.println("hi");
+            }
+        };
+
+        Thread thread1 = new Thread(r);
+        Thread thread2 = new Thread(()->{
+            System.out.println("bye");
+        });
+        thread1.start();
+
+        List<Integer> list = new ArrayList<>(Arrays.asList(5,6,2,5,8,2));
+        Collections.sort(list,(a,b)->{return b-a;});
+        System.out.println(list);
+
+
+
+    }
+    public class Dog implements Comparable<Dog>{
+        int age;
+        public Dog(int age){
+            this.age = age;
+        }
+
+        @Override
+        public int compareTo(Dog o) {
+            return this.age-o.age;
+        }
     }
 }
