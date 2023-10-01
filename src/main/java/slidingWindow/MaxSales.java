@@ -33,11 +33,9 @@ public class MaxSales {
         System.out.println(result);
     }
     public Integer solution(Integer date, List<Integer> sales){
-        Integer currentSum =0;
 
-        for(int i=0;i<date;i++){
-            currentSum += sales.get(i);
-        }
+        Integer currentSum =sales.subList(0,date).stream().mapToInt(Integer::intValue).sum();
+
 
 
         Integer maxSum = currentSum;
