@@ -2,7 +2,7 @@ package String;
 
 import java.util.*;
 
-//입력받은 문자와 문자열을 입력받고, 문자열의 문자들이 입력받은 문자와의 최소거리를 계산한다.
+//문자와 문자열을 입력받고, 문자열의 문자들이 입력받은 문자와의 최소거리를 계산한다.
 public class ShortestCharDistance {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
