@@ -13,8 +13,7 @@ public class Main {
     public static List<String[]> POSSIBLE_ROW = new ArrayList<>(Arrays.asList(rowStartWithWhite,rowStartWithBlack));
 
     public static void main(String[] args) {
-        List<String[]> chessStartWhite = createChessFrom("white");
-        List<String[]> chessStartBlack = createChessFrom("black");
+        List<String[]> chessStartBlack = createChessFromBlack();
 
         InputService inputService = new InputService();
         Integer[] size = inputService.readAsArrayInteger(" ");
@@ -24,43 +23,31 @@ public class Main {
         }
 
         int lowestVal = Integer.MAX_VALUE;
-        int blackStartVal = 0;
-        int whiteStartVal = 0;
 
         for(int startRow=0;startRow<size[0]-7;startRow++){
             for(int startColumn=0;startColumn<size[1]-7;startColumn++){
+                int blackStartVal = 0;
                 for(int row=0;row<8;row++){
                     for(int column=0;column<8;column++) {
                         if(!chessStartBlack.get(row)[column].equals(board.get(startRow+row)[startColumn+column])){
                             blackStartVal++;
                         }
-                        if(!chessStartWhite.get(row)[column].equals(board.get(startRow+row)[startColumn+column])){
-                            whiteStartVal++;
-                        }
                     }
                 }
-                if(blackStartVal<lowestVal){
-                    lowestVal = blackStartVal;
+                int countToChange = Math.min(blackStartVal,64-blackStartVal);
+                if(countToChange<lowestVal){
+                    lowestVal = countToChange;
                 }
-                if(whiteStartVal<lowestVal){
-                    lowestVal = whiteStartVal;
-                }
+
             }
         }
         System.out.println(lowestVal);
     }
 
-    public static List<String[]> createChessFrom(String color){
+    public static List<String[]> createChessFromBlack(){
         List<String[]> chess = new ArrayList<>();
-        if(color.equals("white")){
-            for(int row=0;row<8;row++){
-                chess.add(POSSIBLE_ROW.get(row%2));
-                return chess;
-            }
-        }
         for(int row=0;row<8;row++){
             chess.add(POSSIBLE_ROW.get((row+1)%2));
-            return chess;
         }
         return chess;
     }
