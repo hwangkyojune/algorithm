@@ -1,6 +1,4 @@
 package homework.monthschedule;
-import homework.Circle;
-
 import java.util.Scanner;
 
 public class MonthSchedule {
