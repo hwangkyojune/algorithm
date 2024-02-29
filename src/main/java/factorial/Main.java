@@ -15,12 +15,13 @@ public class Main {
             numOfFive += numOfFiveAsMeasure(i);
         }
 
+        System.out.println(numOfFive);
+
     }
 
     public static int numOfFiveAsMeasure(int num){
         int numOfFive = 0;
         while(true){
-            System.out.println(num);
             if((num % 5) ==0){
                 numOfFive++;
                 num = num/5;
