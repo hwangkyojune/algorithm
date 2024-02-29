@@ -19,4 +19,11 @@ public class StduyTest {
 
         System.out.println(Arrays.toString(integerArray));
     }
+
+    @Test
+    public void minus(){
+        int a =10;
+        System.out.println(a--);
+        System.out.println(a);
+    }
 }
